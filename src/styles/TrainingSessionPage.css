@@ -1,0 +1,183 @@
+/* src/styles/TrainingSessionPage.css */
+
+.training-session-page {
+  display: flex;
+  min-height: 100vh;
+  background-color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Left Panel */
+.left-panel {
+  width: 25%;
+  padding: 1rem;
+  border-right: 1px solid #ddd;
+  background-color: #f8f9fa;
+  overflow-y: auto;
+}
+
+.left-panel h3 {
+  margin-top: 1rem;
+  color: var(--primary-color);
+}
+
+.file-upload-form {
+  margin-top: 1rem;
+}
+
+.file-upload-form input[type="file"] {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.file-upload-form button {
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.file-upload-form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Right Panel */
+.right-panel {
+  width: 75%;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+/* Data Providers Section */
+.data-providers-section {
+  margin-bottom: 2rem;
+}
+
+.data-providers-section h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.data-provider-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #f9f9f9;
+}
+
+.provider-details p {
+  margin: 5px 0;
+  color: #333;
+  font-size: 1rem;
+}
+
+.folder-structure {
+  margin-top: 1rem;
+}
+
+.folder-structure h3 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+/* Training Session Header */
+.right-panel header {
+  margin-bottom: 2rem;
+}
+
+.right-panel header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.right-panel header p {
+  color: #666;
+}
+
+/* Notebook Component Styles */
+/* Adjust as needed based on your Notebook component */
+
+/* Files Section */
+.files-section {
+  margin-top: 2rem;
+}
+
+.files-section h3 {
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+}
+
+.files-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.files-section li {
+  margin-bottom: 0.5rem;
+}
+
+.files-section a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.files-section a:hover {
+  text-decoration: underline;
+}
+
+/* Loader */
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.loader .spinner {
+  margin-right: 0.5rem;
+  animation: spin 2s linear infinite;
+}
+
+/* Error Message */
+.error {
+  color: #dc3545;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Spinner Animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .training-session-page {
+    flex-direction: column;
+  }
+
+  .left-panel,
+  .right-panel {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .training-session-page header h2 {
+    font-size: 1.8rem;
+  }
+
+  .data-providers-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .folder-structure h3 {
+    font-size: 1.1rem;
+  }
+}

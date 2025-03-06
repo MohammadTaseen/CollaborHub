@@ -1,0 +1,35 @@
+:root {
+    --primary-color: #fa9405;
+    --secondary-color: #f0ad4e;
+    --navbar-height: 70px;
+    --danger-color: #dc3545; /* Red for delete actions */
+    --success-color: #28a745; /* Green for success indicators */
+    --light-gray: #f9f9f9;
+    --medium-gray: #ddd;
+    --dark-gray: #555;
+    --font-family: 'Arial, sans-serif';
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to right, #f0f2f5, #d9dee4);
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    opacity: 0.9;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    padding-top: var(--navbar-height); /* Use variable for consistent padding */
+    flex: 1; 
+}

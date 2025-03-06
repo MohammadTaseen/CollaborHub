@@ -1,0 +1,221 @@
+/* src/styles/FederatedTrainingViewPage.css */
+
+/* Root Variables (Ensure these are defined globally, e.g., in variables.css or App.css) */
+:root {
+  --primary-color: #fa9405; /* Dark Orange */
+  --secondary-color: #ffb84d; /* Light Orange */
+  --background-color: #ffffff; /* White */
+  --text-color: #333333; /* Dark Gray */
+  --light-gray: #f5f5f5;
+  --medium-gray: #dddddd;
+  --dark-gray: #555555;
+  --font-family: 'Arial, sans-serif'; /* Update to your preferred font */
+}
+
+/* Federated Training View Page Container */
+.federated-training-view-page {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 30px;
+  background-color: var(--background-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: var(--font-family);
+}
+
+/* Page Title */
+.federated-training-view-page h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--primary-color);
+  font-size: 2.5rem;
+}
+
+/* Section Titles */
+.trainer-section h2,
+.provider-section h2,
+.requests-section h2 {
+  border-bottom: 3px solid var(--secondary-color);
+  padding-bottom: 10px;
+  color: var(--secondary-color);
+  margin-bottom: 25px;
+  font-size: 2rem;
+}
+
+/* Training Card Link */
+.training-card-link {
+  text-decoration: none;
+  color: inherit;
+  user-select: none; /* Prevent text selection */
+}
+
+/* Training Card Styling */
+.training-card {
+  background-color: var(--light-gray);
+  border-left: 5px solid var(--secondary-color);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.training-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background-color: var(--background-color); /* Match Papers Page hover: background to white */
+  color: var(--text-color);
+}
+
+/* Training Card Headings and Text */
+.training-card h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+  font-size: 1.8rem;
+}
+
+.training-card p {
+  margin: 8px 0;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.training-card h4 {
+  margin-top: 20px;
+  color: var(--text-color);
+  font-size: 1.4rem;
+}
+
+.training-card ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/* Provider Item Styling */
+.provider-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--medium-gray);
+}
+
+.provider-item:last-child {
+  border-bottom: none;
+}
+
+/* Action Buttons Container */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Accept and Reject Buttons */
+.accept-btn,
+.reject-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #ffffff; /* Ensure text is white */
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Accept Button - Green */
+.accept-btn {
+  background-color: #28a745; /* Green */
+}
+
+.accept-btn:hover {
+  background-color: #218838; /* Darker Green */
+  transform: translateY(-2px);
+}
+
+/* Reject Button - Red */
+.reject-btn {
+  background-color: #dc3545; /* Red */
+}
+
+.reject-btn:hover {
+  background-color: #c82333; /* Darker Red */
+  transform: translateY(-2px);
+}
+
+/* Error Message Styling */
+.error {
+  color: #e74c3c;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Loader Styling */
+.loader {
+  border: 8px solid var(--light-gray);
+  border-top: 8px solid var(--primary-color);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+  margin: 0 auto 20px auto;
+}
+
+/* Spinner Animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Requests Section Styling */
+.requests-section .request-card {
+  background-color: var(--light-gray);
+  border-left: 5px solid var(--secondary-color);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.requests-section .request-card p {
+  margin: 0 0 10px 0;
+  color: var(--text-color);
+}
+
+/* Prevent text selection on links */
+.training-card-link:hover .training-card {
+  background-color: var(--background-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .federated-training-view-page {
+    padding: 20px;
+  }
+
+  .federated-training-view-page h1 {
+    font-size: 2rem;
+  }
+
+  .trainer-section h2,
+  .provider-section h2,
+  .requests-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .training-card {
+    padding: 15px;
+  }
+
+  .training-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .accept-btn,
+  .reject-btn {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}

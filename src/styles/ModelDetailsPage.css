@@ -1,0 +1,49 @@
+/* ModelDetailsPage.css */
+/* Content Centering */
+.model-details-page .model-details-content-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Headings and text */
+.model-details-page .model-details-heading {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.model-details-page .model-details-paragraph {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-align: justify; /* Improve text alignment */
+}
+
+/* Card container for model details */
+.model-details-page .model-details-container {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 40px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center text in model details */
+}
+
+.model-details-page .model-details-card {
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.model-details-page .model-details-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}

@@ -1,0 +1,226 @@
+/* src/styles/Navbar.css */
+
+/* Root Variables (Ensure these are defined globally, e.g., in variables.css) */
+:root {
+  --primary-color: #fa9405; /* Dark Orange */
+  --secondary-color: #ffb84d; /* Light Orange */
+  --background-color: #ffffff; /* White */
+  --text-color: #333333; /* Dark Gray */
+  --light-gray: #f5f5f5;
+  --medium-gray: #dddddd;
+  --dark-gray: #555555;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Consistent Font */
+}
+
+/* Navbar Container */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem; /* Adjusted padding */
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  height: 60px; /* Set a fixed height for the navbar */
+}
+
+/* Logo Styling */
+.navbar .logo a {
+  font-size: 1.25rem; /* Adjusted font size */
+  font-weight: bold;
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+/* Navigation Links */
+.navbar ul {
+  display: flex;
+  align-items: center; /* Ensure alignment with the profile image */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  margin-left: 0.5rem; /* Adjusted spacing */
+}
+
+/* Navigation Links Styling */
+.navbar ul li a,
+.login-btn {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.3rem 0.6rem; /* Adjusted padding */
+  border-radius: 5px;
+  font-size: 0.85rem; /* Adjusted font size */
+  white-space: nowrap; /* Prevent text from wrapping */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active,
+.login-btn:hover {
+  background-color: var(--primary-color);
+  color: #000;
+}
+
+/* Profile Container */
+.profile-container {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Profile Button Styling */
+.profile-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.profile-button:focus {
+  outline: none;
+}
+
+/* Profile Image Styling */
+.profile-image {
+  width: 40px; /* Increased size for better visibility */
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  object-fit: contain; /* Changed to contain to show the full image */
+  background-color: #e0e0e0; /* Light gray background to handle empty space */
+  padding: 2px; /* Optional: Adds space between image and border */
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px); /* Position below the profile image with a gap */
+  right: 0;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Increased shadow for prominence */
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 1000;
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  min-width: 180px; /* Increased min-width for better visibility */
+  /* Optional: Set a max-width if needed */
+  /* max-width: 250px; */
+}
+
+.dropdown-menu.show {
+  display: flex; /* Show dropdown when 'show' class is added */
+}
+
+.dropdown-menu button {
+  padding: 0.6rem 1rem; /* Adjusted padding */
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.9rem; /* Adjusted font size */
+  color: #333;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.dropdown-menu button:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Hamburger Menu Styling */
+.menu-toggle {
+  display: none; /* Hidden by default */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle .hamburger {
+  width: 25px; /* Adjusted size */
+  height: 3px; /* Slightly increased height for better visibility */
+  background-color: #fff;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 1050px) {
+  .navbar {
+    padding: 0.5rem 1rem; /* Reduced padding */
+    height: 55px; /* Adjusted height */
+  }
+
+  .navbar .logo {
+    font-size: 1.1rem; /* Reduced font size */
+  }
+
+  .menu-toggle {
+    display: block; /* Show hamburger menu */
+  }
+
+  .nav-links {
+    display: none; /* Hide nav links on mobile */
+    flex-direction: column;
+    position: absolute;
+    top: 55px; /* Adjusted to match navbar height */
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 999;
+    padding: 1rem 0;
+  }
+
+  .nav-links.active {
+    display: flex; /* Show nav links when active */
+  }
+
+  .nav-links.active li {
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+
+  .nav-links.active li a,
+  .login-btn {
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+
+  /* Adjust dropdown menu for mobile */
+  .dropdown-menu {
+    position: static;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: none;
+    border-radius: 0;
+    display: none; /* Hidden by default */
+    width: 100%;
+    min-width: unset; /* Remove min-width for mobile */
+  }
+
+  .dropdown-menu.show {
+    display: flex; /* Show dropdown when 'show' class is added */
+  }
+
+  .dropdown-menu button {
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem; /* Adjusted font size */
+  }
+
+  /* Ensure nav-links do not exceed the viewport width */
+  .nav-links li a,
+  .login-btn,
+  .profile-button {
+    width: 100%;
+    text-align: center;
+  }
+}

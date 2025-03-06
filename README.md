@@ -1,4 +1,4 @@
-# CollaborHub: Data Science Solutions Website
+# CollaborHub: A powerful hub for all data science needs.
 This is an innovative platform where data providers can provide data securely to model trainers through the platform to train the model. The model trainer can't access the data directly. Model trainers can just use the data to train. The folder structure and some basic functionalities are allowed (i.e., .head()) for training. When the model trainer writes the code, Gemini checks it, and either approves or rejects it. If the model trainer writes any such code that violates the data provider's data privacy, Gemini rejects that, and the code cell doesn't execute. Setup the project and check out the 'Federated Training". 
 
 ## Demo
